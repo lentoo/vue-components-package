@@ -2,16 +2,29 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <notification :show="true" content="test">
+    </notification> -->
+    <button @click="notify">created</button>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+// import Notification from './components/notification/notification.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  mounted () {
+  },
+  methods: {
+    notify () {
+      this.$notify({
+        content: 'test $notify'
+      })
+    }
   }
 }
 </script>
