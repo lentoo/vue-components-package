@@ -3,7 +3,7 @@
     <div :class="horizontalClass" @mouseenter="mouseenter" @mouseleave="mouseleave" v-show="visible" class="lxb-notification" :style="[verticalPositionn]">
       <h2 class="lxb-notification--title">{{title}}</h2>
       <div class="lxb-notification--content">{{content}}</div>
-      <i class="lxb-notification--closeBtn iconfont icon-close">
+      <i class="lxb-notification--closeBtn iconfont icon-close" @click="handleClose">
 
       </i>
       <!-- <div class="notification-content">
@@ -119,13 +119,17 @@ export default {
   opacity: 0;
   transform: translateX(200%)
 }
-.fade-enter-to {
+.fade-right-enter-to {
   transform: translateX(0);
   opacity: 1;
 }
 
-.fade-leave-to {
+.fade-right-leave-to {
   opacity: 0;
   transform: translateX(200%)
+}
+.fade-left-leave-to {
+  opacity: 0;
+  transform: translateX(-200%)
 }
 </style>
