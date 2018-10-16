@@ -1,4 +1,4 @@
-# demo
+# vue-components-package
 
 ## Project setup
 ```
