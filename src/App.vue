@@ -4,7 +4,10 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <!-- <notification :show="true" content="test">
     </notification> -->
-    <button @click="notify">created</button>
+    <button @click="notify('top-left')">top-left</button>
+    <button @click="notify('top-right')">top-right</button>
+    <button @click="notify('bottom-left')">bottom-left</button>
+    <button @click="notify('bottom-right')">bottom-right</button>
   </div>
 </template>
 
@@ -20,9 +23,11 @@ export default {
   mounted () {
   },
   methods: {
-    notify () {
+    notify (position) {
       this.$notify({
-        content: 'test $notify'
+        title: '标题',        
+        content: '这是一条通知内容',
+        position
       })
     }
   }

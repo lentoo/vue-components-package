@@ -1,16 +1,9 @@
-import Notification from './notification.vue'
+import mian from './main.vue'
 import Vue from 'vue'
 
 const Component = {
-  extends: Notification,
+  extends: mian,
   computed: {
-    style () {
-      return {
-        position: 'fixed',
-        right: '20px',
-        bottom: `${this.verticalOffset}px`
-      }
-    }
   },
   data() {
     return {
@@ -63,7 +56,7 @@ const removeInstance = (instance) => {
   instance.$destroy()
   
   const removeHeight = instance.height
-  for (let i = index; i < instances.length; i++) {
+  for (let i = index; i < instances.filter(item => item.position === instance.position).length; i++) {
     const inst = instances[i];
     inst.verticalOffset = inst.verticalOffset - removeHeight - 16
   }
@@ -71,9 +64,15 @@ const removeInstance = (instance) => {
 const notify = (options) => {
   if (Vue.prototype.$isServer) return
   const id = `notification_${seed++}`
-
+  const { position, autoClose, ...rest } = options
   let instance = new NotificationConstrucotr({
-    propsData: options
+    propsData: {
+      position,
+      ...rest
+    },
+    data: {
+      autoClose: autoClose === undefined ? 3000 : autoClose
+    }
   })
   
   instance.id = id
@@ -82,7 +81,7 @@ const notify = (options) => {
   instance.visible = true
 
   let verticalOffset = 0
-  instances.forEach( item => {
+  instances.filter( item => item.position === position).forEach( item => {
     verticalOffset += item.$el.offsetHeight + 16
   })
   verticalOffset += 16
