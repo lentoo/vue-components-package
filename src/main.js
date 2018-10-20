@@ -1,11 +1,20 @@
 import Vue from 'vue'
-import App from './App.vue'
-import Notify from './components/notification'
 
-Vue.config.productionTip = false
+import Notification from './components/notification'
 
-Vue.use(Notify)
-
-new Vue({
-  render: h => h(App)
-}).$mount('#app')
+const components = [
+  // Notification
+]
+const _init = (Vue) => {
+  components.map( component => Vue.component(component.name, component))
+  
+  Vue.use(Notification)
+}
+_init(Vue)
+const install = (Vue) => {
+  _init(Vue)
+}
+export default {
+  Notification,
+  install
+}

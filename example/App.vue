@@ -1,0 +1,73 @@
+<template>
+  <div id="app">
+    <lt-header>
+    </lt-header>
+    <main class="body container">
+      <div class="body-left">
+        <lt-slideber :list="list"></lt-slideber>
+      </div>
+      <div class="body-right">
+        <router-view></router-view>
+      </div>
+    </main>
+  </div>
+</template>
+
+<script>
+import LtHeader from "./components/header";
+import LtSlideber from "./components/slidebar";
+import navConfigJson from "./nav.config.json";
+// import Notification from './components/notification/notification.vue'
+const data = navConfigJson
+export default {
+  name: "app",
+  components: {
+    LtHeader,
+    LtSlideber
+  },
+  data() {
+    return {
+      list: []
+    };
+  },
+  mounted() {
+    this.list = data
+  }
+};
+</script>
+
+<style lang="scss">
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  h2 {
+    font-size: 28px;
+    font-weight: 400;
+    color: rgb(31, 47, 61);
+  }
+  h3 {
+    margin: 55px 0 20px;
+  }
+  p {
+    font-size: 14px;
+    color: rgb(94, 109, 130);
+    margin: 14px 0;
+  }
+}
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .body-left {
+    flex: 0 0 240px;
+  }
+  .body-right {
+    flex: 1;
+    padding-left: 20px;
+    padding-top: 20px;
+    overflow-x: hidden;
+  }
+}
+</style>
