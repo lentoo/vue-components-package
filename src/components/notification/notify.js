@@ -8,7 +8,7 @@ const Component = {
   data() {
     return {
       timer: null,
-      autoClose: 3000,
+      duration: 4500,
       height: 0
     }
   },
@@ -17,10 +17,10 @@ const Component = {
   },
   methods: {
     createTimer () {
-      if (this.autoClose) {
+      if (this.duration) {
         this.timer = setTimeout( () => {
           this.visible = false
-        },this.autoClose)
+        },this.duration)
       }
     },
     clearTimer () {
@@ -64,14 +64,14 @@ const removeInstance = (instance) => {
 const notify = (options) => {
   if (Vue.prototype.$isServer) return
   const id = `notification_${seed++}`
-  const { position, autoClose, ...rest } = options
+  const { position, duration, ...rest } = options
   let instance = new NotificationConstrucotr({
     propsData: {
       position,
       ...rest
     },
     data: {
-      autoClose: autoClose === undefined ? 3000 : autoClose
+      duration: duration === undefined ? 4500 : duration
     }
   })
   
