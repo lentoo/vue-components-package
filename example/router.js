@@ -8,6 +8,11 @@ const routes = [
     component: () => import('./docs/notification.md')
   },
   {
+    path: '/button',
+    name: 'button',
+    component: () => import('./docs/button.md')
+  },
+  {
     path: '*',
     name: '404',
     component: () => import('./docs/404.md')
