@@ -70,4 +70,25 @@ export default {
     overflow-x: hidden;
   }
 }
+
+table {
+  width: 100%;
+  tr {
+    border-bottom: 1px solid #ccc;
+  }
+  th {
+    color: #666;
+    line-height: 50px;
+    text-align: center;
+    font-weight: 700;
+    padding: 0 10px;
+    
+  }
+  td {
+    padding: 0 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+  }
+}
 </style>

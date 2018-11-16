@@ -9,15 +9,19 @@
           class="code-expand-icon-show"></span>
     </div>
     <div class="demo-block-detail">
-      <div class="demo-block-meta"
-        v-show="showCode"
-        v-if="$slots.default">
-        <slot></slot>
-      </div>
-      <div class="demo-block-code"
-        v-show="showCode">
-        <slot name="highlight"></slot>
-      </div>
+        <div ref="detailWarpper" :class="{
+          open: showCode
+        }" :style="{
+          height: showCode ? `${codeBlockHeight}px` : 0
+        }">
+          <div class="demo-block-meta"
+            v-if="$slots.default">
+            <slot></slot>
+          </div>
+          <div class="demo-block-code">
+            <slot name="highlight"></slot>
+          </div>
+        </div>
     </div>
     <div v-if="$slots.default"
       class="demo-block-control"
@@ -27,7 +31,7 @@
           'icon-triangle-bottom': !showCode,
           'icon-triangle-top': showCode
           }"></i>
-        <span>
+        <span style="font-size: 14px;">
           {{showCode? '收起代码': '展开代码'}}
         </span>
       </div>
@@ -36,15 +40,33 @@
 </template>
 <script type="text/babel">
 export default {
-  name: 'demo-block',
+  name: "demo-block",
   data() {
     return {
       showCode: false
     };
+  },
+  computed: {
+    codeBlockHeight() {
+      return this.calcCodeBlockHeight()
+    }
+  },
+  mounted() {
+    this.calcCodeBlockHeight();
+  },
+  methods: {
+    // 计算代码块展开的高度
+    calcCodeBlockHeight() {
+      let countHeight = 0
+      Array.from(this.$refs.detailWarpper.children).forEach(el => {
+        countHeight += el.offsetHeight;
+      });
+      return countHeight;
+    }
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .demo-block {
   box-sizing: border-box;
   border: 1px solid #ebedf0;
@@ -56,6 +78,12 @@ export default {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   border-radius: 2px;
+  &-detail {
+    overflow: hidden;
+    > div {
+      transition: height 0.3s;
+    }
+  }
 }
 .demo-block p {
   padding: 0;
@@ -68,10 +96,10 @@ export default {
   text-align: center;
   cursor: pointer;
   > div {
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
     transform: translateX(80px);
     span {
-      transition: all .2s ease-in;
+      transition: all 0.2s ease-in;
       opacity: 0;
     }
     &:hover {

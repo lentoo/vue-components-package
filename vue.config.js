@@ -19,16 +19,16 @@ module.exports = {
       .options({
         raw: true,
         use: [
-          [require('markdown-it-container'), 'demo', {
+          [require('markdown-it-container'), 'code', {
 
             validate: function (params) {
-              return params.trim().match(/^demo\s+(.*)$/);
+              return params.trim().match(/^code\s+(.*)$/);
             },
 
             render: function (tokens, idx) {
               if (tokens[idx].nesting === 1) {
                 // 1.获取第一行的内容使用markdown渲染html作为组件的描述
-                let demoInfo = tokens[idx].info.trim().match(/^demo\s+(.*)$/);
+                let demoInfo = tokens[idx].info.trim().match(/^code\s+(.*)$/);
                 let description = (demoInfo && demoInfo.length > 1) ? demoInfo[1] : '';
                 let descriptionHTML = description ? markdownRender.render(description) : '';
                 // 2.获取代码块内的html和js代码
