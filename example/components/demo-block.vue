@@ -156,7 +156,6 @@ export default {
   box-sizing: border-box;
   font-size: 14px;
   color: #444;
-  font-size: 14px;
   line-height: 2;
   border-radius: 0;
   border-bottom: 1px dashed #ebedf0;
@@ -172,7 +171,7 @@ export default {
   height: 18px;
   line-height: 18px;
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
-  font-size: 14px;
+  font-size: 12px;
 }
 .demo-block .demo-block-code {
   background-color: #f7f7f7;
@@ -183,7 +182,7 @@ export default {
   font-family: Consolas, Menlo, Courier, monospace;
   border: none;
   display: block;
-  font-size: 14px;
+  font-size: 12px;
   padding: 16px 32px;
 }
 .demo-block .demo-block-code pre {
