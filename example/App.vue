@@ -32,6 +32,11 @@ export default {
   },
   mounted() {
     this.list = data
+  },
+  methods: {
+    open() {
+      this.$notify()
+    }
   }
 };
 </script>
@@ -82,7 +87,7 @@ table {
     text-align: center;
     font-weight: 700;
     padding: 0 10px;
-    
+
   }
   td {
     padding: 0 10px;

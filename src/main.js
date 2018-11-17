@@ -2,7 +2,6 @@ import Vue from 'vue'
 
 import Notification from './components/notification'
 import Button from './components/button'
-
 const components = [
   Button,
   Notification
@@ -16,5 +15,6 @@ const install = (Vue) => {
 }
 export default {
   Notification,
+  Button,
   install
 }

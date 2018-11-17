@@ -14,9 +14,6 @@
 </template>
 
 <script>
-import NotificationMd from '../example/docs/notification.md'
-import 'highlight.js/styles/color-brewer.css';
-// import Notification from './components/notification/notification.vue'
 
 export default {
   name: 'app',
@@ -28,7 +25,7 @@ export default {
   methods: {
     notify (position) {
       this.$notify({
-        title: '标题',        
+        title: '标题',
         content: '这是一条通知内容',
         position
       })

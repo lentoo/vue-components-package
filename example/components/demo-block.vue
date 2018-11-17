@@ -200,4 +200,7 @@ export default {
   white-space: nowrap;
   user-select: none;
 }
+.highlight {
+  line-height: 20px;
+}
 </style>

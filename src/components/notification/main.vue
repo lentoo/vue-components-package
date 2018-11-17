@@ -1,9 +1,9 @@
 <template>
   <transition :name="transitionName" @after-leave="afterLeave" @after-enter="afterEnter">
-    <div :class="horizontalClass" @mouseenter="mouseenter" @mouseleave="mouseleave" v-show="visible" class="lxb-notification" :style="[verticalPositionn]">
-      <h2 class="lxb-notification--title">{{title}}</h2>
-      <div class="lxb-notification--content">{{content}}</div>
-      <i class="lxb-notification--closeBtn iconfont icon-close" @click="handleClose">
+    <div :class="horizontalClass" @mouseenter="mouseenter" @mouseleave="mouseleave" v-show="visible" class="lt-notification" :style="[verticalPositionn]">
+      <h2 class="lt-notification--title">{{title}}</h2>
+      <div class="lt-notification--content">{{content}}</div>
+      <i class="lt-notification--closeBtn iconfont icon-close" @click="handleClose">
 
       </i>
       <!-- <div class="notification-content">
@@ -38,7 +38,7 @@ export default {
     }
   },
   computed: {
-    verticalClass() {      
+    verticalClass() {
       return /^top-/.test(this.position) ? 'top' : 'bottom'
     },
     horizontalClass() {
@@ -72,13 +72,13 @@ export default {
     afterEnter () {},
     mouseenter () {},
     mouseeleave () {}
-    
+
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.lxb-notification {
+.lt-notification {
   width: 330px;
   height: 80px;
   border-radius: 4px;

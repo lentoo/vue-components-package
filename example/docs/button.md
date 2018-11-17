@@ -1,3 +1,9 @@
+<style>
+  .lt-button + .lt-button {
+    margin-left: 10px;
+  }
+</style>
+
 ## Button 按钮
 常用的操作按钮
 
@@ -6,9 +12,12 @@
 :::code 使用type属性；来定义Button的样式
 ```html
 <template>
-  <lxb-button>默认按钮</lxb-button>
-  <lxb-button type="primary">主要按钮</lxb-button>
-  <lxb-button type="success">成功按钮</lxb-button>
+  <lt-button>默认按钮</lt-button>
+  <lt-button type="primary">主要按钮</lt-button>
+  <lt-button type="success">成功按钮</lt-button>
+  <lt-button type="info">信息按钮</lt-button>
+  <lt-button type="warning">警告按钮</lt-button>
+  <lt-button type="danger">危险按钮</lt-button>
 </template>
 ```
 :::

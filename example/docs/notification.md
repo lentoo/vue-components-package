@@ -1,3 +1,10 @@
+
+<style>
+  .lt-button + .lt-button {
+    margin-left: 10px;
+  }
+</style>
+
 ## Notification 通知
 悬浮出现在页面角落，显示全局的通知提醒消息。
 ### 基本用法
@@ -6,67 +13,20 @@
 
 ```html
 <template>
-    <button @click="notify('top-left')">top-left</button>
-    <button @click="notify('top-right')">top-right</button>
-    <button @click="notify('bottom-left')">bottom-left</button>
-    <button @click="notify('bottom-right')">bottom-right</button>
+  <lt-button type="primary" @click="notify('top-left')">top-left</lt-button>
+  <lt-button type="primary" @click="notify('top-right')">top-right</lt-button>
+  <lt-button type="primary" @click="notify('bottom-left')">bottom-left</lt-button>
+  <lt-button type="primary" @click="notify('bottom-right')">bottom-right</lt-button>
 </template>
-
-
 <script>
   export default {
     methods: {
       notify(position) {
           this.$notify({
-            title: '标题',        
+            title: '标题',
             content: '这是一条通知内容',
             position
           })
-      },
-
-      open2() {
-        this.$notify({
-          title: '提示',
-          message: '这是一条不会自动关闭的消息',
-          duration: 0
-        });
-      }
-    }
-  }
-</script>
-```
-:::
-
-### 自定义弹出位置
-可以让 Notification 从屏幕四角中的任意一角弹出
-:::demo 使用position属性定义 Notification 的弹出位置，支持四个选项：top-right、top-left、bottom-right、bottom-left，默认为top-right。
-
-```html
-<template>
-    <button @click="notify('top-left')">top-left</button>
-    <button @click="notify('top-right')">top-right</button>
-    <button @click="notify('bottom-left')">bottom-left</button>
-    <button @click="notify('bottom-right')">bottom-right</button>
-</template>
-
-
-<script>
-  export default {
-    methods: {
-      notify(position) {
-          this.$notify({
-            title: '标题',        
-            content: '这是一条通知内容',
-            position
-          })
-      },
-
-      open2() {
-        this.$notify({
-          title: '提示',
-          message: '这是一条不会自动关闭的消息',
-          duration: 0
-        });
       }
     }
   }
