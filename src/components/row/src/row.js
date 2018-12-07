@@ -1,5 +1,5 @@
 export default {
-  name: 'lt-row',
+  name: 'cc-row',
   props: {
     tag: {
       type: String,
@@ -9,7 +9,7 @@ export default {
   render(h) {
     return h(this.tag, {
       class: [
-        'lt-row'
+        'cc-row'
       ]
     }, this.$slots.default)
   }

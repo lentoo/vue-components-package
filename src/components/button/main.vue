@@ -1,6 +1,6 @@
 <template>
-  <button ref="btn" @click="onClick" class="lt-button" :class="[{
-    [`lt-button__${btnType}`]: true,
+  <button ref="btn" @click="onClick" class="cc-button" :class="[{
+    [`cc-button__${btnType}`]: true,
     'is-plain': plain !== undefined,
     'is-round': round !== undefined
   }]"><slot></slot></button>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "lt-button",
+  name: "cc-button",
   props: {
     type: {
       type: String,
@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss">
 @import "../theme-chalk//index.scss";
-.lt-button {
+.cc-button {
   box-sizing: border-box;
   width: 100px;
   height: 40px;
@@ -153,7 +153,7 @@ export default {
       background-color: $infoActiveColor;
     }
     &.is-plain {
-      background-color: #f4f4f5;      
+      background-color: #f4f4f5;
       border-color: #d3d4d6;
       color: #909399;
       &:hover {
@@ -174,7 +174,7 @@ export default {
       background-color: $warningActiveColor;
     }
     &.is-plain {
-      background-color: #fdf6ec;      
+      background-color: #fdf6ec;
       border-color: #f5dab1;
       color: #e6a23c;
       &:hover {
@@ -195,7 +195,7 @@ export default {
       background-color: $dangerActiveColor;
     }
     &.is-plain {
-      background-color: #fef0f0;      
+      background-color: #fef0f0;
       border-color: #fbc4c4;
       color: #f56c6c;
       &:hover {

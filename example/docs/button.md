@@ -1,5 +1,5 @@
 <style>
-  .lt-button + .lt-button {
+  .cc-button + .cc-button {
     margin-left: 10px;
   }
 </style>
@@ -12,30 +12,30 @@
 :::code 使用```type```、```plain```、```round```和```circle```属性来定义 Button 的样式。
 ```html
 <template>
-  <lt-row>
-    <lt-button>默认按钮</lt-button>
-    <lt-button type="primary">主要按钮</lt-button>
-    <lt-button type="success">成功按钮</lt-button>
-    <lt-button type="info">信息按钮</lt-button>
-    <lt-button type="warning">警告按钮</lt-button>
-    <lt-button type="danger">危险按钮</lt-button>
-  </lt-row>
-  <lt-row>
-    <lt-button plain>朴素按钮</lt-button>
-    <lt-button type="primary" plain>主要按钮</lt-button>
-    <lt-button type="success" plain>成功按钮</lt-button>
-    <lt-button type="info" plain>信息按钮</lt-button>
-    <lt-button type="warning" plain>警告按钮</lt-button>
-    <lt-button type="danger" plain>危险按钮</lt-button>
-  </lt-row>
-  <lt-row>
-    <lt-button round plain>圆角按钮</lt-button>
-    <lt-button round type="primary">主要按钮</lt-button>
-    <lt-button round type="success">成功按钮</lt-button>
-    <lt-button round type="info">信息按钮</lt-button>
-    <lt-button round type="warning">警告按钮</lt-button>
-    <lt-button round type="danger">危险按钮</lt-button>
-  </lt-row>
+  <cc-row>
+    <cc-button>默认按钮</cc-button>
+    <cc-button type="primary">主要按钮</cc-button>
+    <cc-button type="success">成功按钮</cc-button>
+    <cc-button type="info">信息按钮</cc-button>
+    <cc-button type="warning">警告按钮</cc-button>
+    <cc-button type="danger">危险按钮</cc-button>
+  </cc-row>
+  <cc-row>
+    <cc-button plain>朴素按钮</cc-button>
+    <cc-button type="primary" plain>主要按钮</cc-button>
+    <cc-button type="success" plain>成功按钮</cc-button>
+    <cc-button type="info" plain>信息按钮</cc-button>
+    <cc-button type="warning" plain>警告按钮</cc-button>
+    <cc-button type="danger" plain>危险按钮</cc-button>
+  </cc-row>
+  <cc-row>
+    <cc-button round plain>圆角按钮</cc-button>
+    <cc-button round type="primary">主要按钮</cc-button>
+    <cc-button round type="success">成功按钮</cc-button>
+    <cc-button round type="info">信息按钮</cc-button>
+    <cc-button round type="warning">警告按钮</cc-button>
+    <cc-button round type="danger">危险按钮</cc-button>
+  </cc-row>
 </template>
 ```
 :::
@@ -46,8 +46,8 @@
 :::code rpple
 ```html
 <template>
-  <lt-button rpple>默认按钮</lt-button>
-  <lt-button rpple type="primary">主要按钮</lt-button>
+  <cc-button rpple>默认按钮</cc-button>
+  <cc-button rpple type="primary">主要按钮</cc-button>
 </template>
 ```
 :::

@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <lt-header>
-    </lt-header>
+    <cc-header>
+    </cc-header>
     <main class="body container">
       <div class="body-left">
-        <lt-slideber :list="list"></lt-slideber>
+        <cc-slideber :list="list"></cc-slideber>
       </div>
       <div class="body-right">
         <vue-scroll>
@@ -16,16 +16,16 @@
 </template>
 
 <script>
-import LtHeader from "./components/header";
-import LtSlideber from "./components/slidebar";
+import CcHeader from "./components/header";
+import CcSlideber from "./components/slidebar";
 import navConfigJson from "./nav.config.json";
 // import Notification from './components/notification/notification.vue'
 const data = navConfigJson
 export default {
   name: "app",
   components: {
-    LtHeader,
-    LtSlideber
+    CcHeader,
+    CcSlideber
   },
   data() {
     return {

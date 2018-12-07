@@ -1,16 +1,16 @@
 <template>
-  <div class="lt-slidebar">
+  <div class="cc-slidebar">
     <vue-scroll>
-      <div v-for="(item, index) in list" :key="index"  class="lt-nav__container">
-        <span class="lt-nav__container__title">
+      <div v-for="(item, index) in list" :key="index"  class="cc-nav__container">
+        <span class="cc-nav__container__title">
           {{item.name}}
         </span>
-        <div v-for="(group, i) in item.groups" :key="i"  class="lt-nav__group">
-          <div class="lt-nav__group__title">
+        <div v-for="(group, i) in item.groups" :key="i"  class="cc-nav__group">
+          <div class="cc-nav__group__title">
             {{group.groupName}}
           </div>
-          <ul class="lt-nav__list" v-for="(list, j) in group.list" :key="j">
-            <li class="lt-nav__item"><router-link :to="list.path">{{list.title}}</router-link> </li>
+          <ul class="cc-nav__list" v-for="(list, j) in group.list" :key="j">
+            <li class="cc-nav__item"><router-link :to="list.path">{{list.title}}</router-link> </li>
           </ul>
         </div>
       </div>
@@ -30,13 +30,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.lt-slidebar {
+.cc-slidebar {
   // padding-bottom: 200px;
   box-sizing: border-box;
   height: calc(100vh - 80px);
   // overflow-y: auto;
 }
-.lt-nav__container {
+.cc-nav__container {
   a {
     display: inline-block;
     width: 100%;
@@ -60,7 +60,7 @@ export default {
     padding-bottom: 240px;
   }
 }
-.lt-nav__group {
+.cc-nav__group {
   &__title {
     font-size: 12px;
     color: rgb(153, 153, 153);
@@ -68,7 +68,7 @@ export default {
     margin-top: 12px;
   }
 }
-.lt-nav {
+.cc-nav {
   &__item a{
     font-size: 14px;
     color: rgb(68, 68, 68);

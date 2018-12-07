@@ -1,6 +1,6 @@
 
 <style>
-  .lt-button + .lt-button {
+  .cc-button + .cc-button {
     margin-left: 10px;
   }
 </style>
@@ -13,10 +13,10 @@
 
 ```html
 <template>
-  <lt-button type="primary" @click="notify('top-left')">top-left</lt-button>
-  <lt-button type="primary" @click="notify('top-right')">top-right</lt-button>
-  <lt-button type="primary" @click="notify('bottom-left')">bottom-left</lt-button>
-  <lt-button type="primary" @click="notify('bottom-right')">bottom-right</lt-button>
+  <cc-button type="primary" @click="notify('top-left')">top-left</cc-button>
+  <cc-button type="primary" @click="notify('top-right')">top-right</cc-button>
+  <cc-button type="primary" @click="notify('bottom-left')">bottom-left</cc-button>
+  <cc-button type="primary" @click="notify('bottom-right')">bottom-right</cc-button>
 </template>
 <script>
   export default {

@@ -1,7 +1,7 @@
 <template>
-  <header class="lt-header">
-    <div class="li-header-warpper container">
-      <img class="lt-header__logo"  src="../assets/images/logo.png" alt="logo" srcset="">
+  <header class="cc-header">
+    <div class="cc-header-warpper container">
+      <img class="cc-header__logo"  src="../assets/images/logo-ccode.png" alt="logo" srcset="">
     </div>
   </header>
 </template>
@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .lt-header {
+  .cc-header {
     width: 100%;
     height: 80px;
     background-color: #fff;
@@ -21,8 +21,8 @@ export default {
     box-sizing: border-box;
     &__logo {
       display: inline-block;
-      width: 200px;
-      height: 80px;
+      height: 55px;
+      margin-top: 12px;
     }
   }
 </style>

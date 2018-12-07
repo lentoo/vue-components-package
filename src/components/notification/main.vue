@@ -1,9 +1,9 @@
 <template>
   <transition :name="transitionName" @after-leave="afterLeave" @after-enter="afterEnter">
-    <div :class="horizontalClass" @mouseenter="mouseenter" @mouseleave="mouseleave" v-show="visible" class="lt-notification" :style="[verticalPositionn]">
-      <h2 class="lt-notification--title">{{title}}</h2>
-      <div class="lt-notification--content">{{content}}</div>
-      <i class="lt-notification--closeBtn iconfont icon-close" @click="handleClose">
+    <div :class="horizontalClass" @mouseenter="mouseenter" @mouseleave="mouseleave" v-show="visible" class="cc-notification" :style="[verticalPositionn]">
+      <h2 class="cc-notification--title">{{title}}</h2>
+      <div class="cc-notification--content">{{content}}</div>
+      <i class="cc-notification--closeBtn iconfont icon-close" @click="handleClose">
 
       </i>
       <!-- <div class="notification-content">
@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.lt-notification {
+.cc-notification {
   width: 330px;
   height: 80px;
   border-radius: 4px;
