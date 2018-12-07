@@ -94,6 +94,7 @@ export default {
   line-height: 44px;
   color: rgb(211, 220, 230);
   text-align: center;
+  overflow: hidden;
   cursor: pointer;
   > div {
     transition: all 0.2s ease-in;

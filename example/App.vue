@@ -7,7 +7,9 @@
         <lt-slideber :list="list"></lt-slideber>
       </div>
       <div class="body-right">
-        <router-view></router-view>
+        <vue-scroll>
+          <router-view></router-view>
+        </vue-scroll>
       </div>
     </main>
   </div>
@@ -70,9 +72,12 @@ export default {
   }
   .body-right {
     flex: 1;
+    height: calc(100vh - 100px);
     padding-left: 20px;
     padding-top: 20px;
-    overflow-x: hidden;
+    .__rail-is-vertical {
+      position: fixed;
+    }
   }
 }
 

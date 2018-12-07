@@ -14,8 +14,8 @@ export default {
 
 <style lang="scss">
   .lt-header {
+    width: 100%;
     height: 80px;
-    line-height: 80px;
     background-color: #fff;
     box-shadow: 8px 0 8px rgba(0, 0, 0, .2);
     box-sizing: border-box;
