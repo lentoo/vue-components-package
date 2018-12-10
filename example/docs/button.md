@@ -42,12 +42,22 @@
 
 
 ### 水波纹效果
-使用rpple属性；来增加Button的水波纹效果
-:::code rpple
+:::code 使用```rpple```属性；来增加Button的水波纹效果
 ```html
 <template>
   <cc-button rpple>默认按钮</cc-button>
   <cc-button rpple type="primary">主要按钮</cc-button>
+</template>
+```
+:::
+
+### 阴影效果
+点击按钮阴影效果
+:::code 给Button组件添加```depressed```属性，来实现按下阴影效果
+```html
+<template>
+  <cc-button depressed rpple type="primary">主要按钮</cc-button>
+  <cc-button depressed rpple type="success">成功按钮</cc-button>
 </template>
 ```
 :::

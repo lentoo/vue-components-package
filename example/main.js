@@ -7,11 +7,12 @@ import "vuescroll/dist/vuescroll.css";
 
 import DemoBlock from './components/demo-block.vue'
 import './assets/styles/common.scss'
-import lentoo from '@'
+import cc from '../src/index'
 // import { Button, Row } from '../src'
 // import '@/components/theme-chalk/index.scss'
 
-import 'highlight.js/styles/color-brewer.css';
+// import 'highlight.js/styles/color-brewer.css';
+import "highlight.js/styles/solarized-light.css";
 
 Vue.use(vuescroll); // install the vuescroll first
 Vue.prototype.$vuescrollConfig = {
@@ -22,7 +23,7 @@ Vue.prototype.$vuescrollConfig = {
 };
 
 Vue.component(DemoBlock.name, DemoBlock)
-Vue.use(lentoo)
+Vue.use(cc)
     // .use(Row)
 new Vue({
   router,

@@ -2,7 +2,8 @@
   <button ref="btn" @click="onClick" class="cc-button" :class="[{
     [`cc-button__${btnType}`]: true,
     'is-plain': plain !== undefined,
-    'is-round': round !== undefined
+    'is-round': round !== undefined,
+    'cc-button__depressed': depressed !== undefined
   }]"><slot></slot></button>
 </template>
 
@@ -16,7 +17,8 @@ export default {
     },
     plain: null,
     rpple: null,
-    round: null
+    round: null,
+    depressed: null
   },
   computed: {
     btnType() {
@@ -86,6 +88,13 @@ export default {
   position: relative;
   overflow: hidden;
   user-select: none;
+  transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), color 1ms;
+  &__depressed {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+    &:active {
+      box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+    }
+  }
   &__default {
     &:hover {
       color: $primaryColor;
@@ -210,18 +219,19 @@ export default {
 }
 .ripple {
   position: absolute;
-  background: rgba(0, 0, 0, .2);
+  // background: rgba(0, 0, 0, .2);
+  background: rgba(255, 255, 255, .5);
   border-radius: 100%;
   transform: scale(0);
   pointer-events: none;
 }
 .ripple.show {
-  animation: ripple 0.75s ease;
+  animation: ripple 0.5s ease;
 }
 
 @keyframes ripple {
   to {
-    transform: scale(2);
+    transform: scale(2.5);
     opacity: 0;
   }
 }

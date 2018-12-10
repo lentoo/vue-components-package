@@ -1,0 +1,13 @@
+
+@for $i from 1 through 24 {
+  .cc-col-#{$i} {
+    width: (1 / 24 * $i * 100 ) * 1%;
+  }
+  .cc-col-offset-#{$i} {
+    margin-left: (1 / 24 * $i * 100 ) * 1%;
+  }
+}
+.cc-col {
+  box-sizing: border-box;
+  display: inline-block;
+}
