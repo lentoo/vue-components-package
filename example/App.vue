@@ -8,7 +8,22 @@
       </div>
       <div class="body-right">
         <vue-scroll>
-          <router-view></router-view>
+          <transition name="slide" mode="out-in">
+            <router-view></router-view>
+          </transition>
+          <cc-row type="flex" justify="space-between" class="nav">
+            <cc-col :span="12">
+              <router-link v-if="pre" tag="div" :to="pre.path">
+                <i class="iconfont icon-arrow-left"></i>
+                <span>{{pre.title}}</span>
+              </router-link>
+            </cc-col>
+            <cc-col :span="12">
+              <router-link style="text-align: right;" v-if="next" tag="div" :to="next.path">
+                <span>{{next.title}}</span><i class="iconfont icon-arrow-right"></i>
+              </router-link>
+            </cc-col>
+          </cc-row>
         </vue-scroll>
       </div>
     </main>
@@ -29,15 +44,31 @@ export default {
   },
   data() {
     return {
-      list: []
+      list: [],
+      navArr: [],
+      pre: null,
+      next: null
     };
   },
   mounted() {
     this.list = data
+    let navArr = []
+    this.list.forEach( item => item.groups.forEach( g => navArr = [...navArr, ...g.list]));
+    this.navArr = navArr
   },
-  methods: {
-    open() {
-      this.$notify()
+  watch: {
+    $route() {
+      const index = this.navArr.findIndex( nav => nav.path === this.$route.path )
+      if (index > 0) {
+        this.pre = this.navArr[index - 1]
+      } else {
+        this.pre = null
+      }
+      if (index < this.navArr.length - 1) {
+        this.next = this.navArr[index + 1]
+      } else {
+       this.next = null
+      }
     }
   }
 };
@@ -80,7 +111,25 @@ export default {
     }
   }
 }
-
+.nav {
+  div {
+    padding: 20px 0;
+    line-height: 30px;
+    color: #333;
+    cursor: pointer;
+    &:hover {
+      color: #409eff;
+    }
+  }
+  .iconfont {
+    padding-top: 3px;
+    margin-bottom: -3px;
+  }
+  span {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+}
 table {
   width: 100%;
   tr {
@@ -100,5 +149,20 @@ table {
     line-height: 50px;
     font-size: 14px;
   }
+}
+.slide-enter-active,.slide-leave-active {
+  transition: .3s all ease;
+}
+.slide-enter,.slide-leave-to {
+  transform: translateY(100px);
+  opacity: 0;
+}
+.slide-enter-to,.slide-leave {
+  transform: translateY(0);
+  opacity: 1;
+}
+.iconfont {
+  position: relative;
+  vertical-align: middle;
 }
 </style>

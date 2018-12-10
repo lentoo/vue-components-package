@@ -10,7 +10,10 @@
             {{group.groupName}}
           </div>
           <ul class="cc-nav__list" v-for="(list, j) in group.list" :key="j">
-            <li class="cc-nav__item"><router-link :to="list.path">{{list.title}}</router-link> </li>
+            <li class="cc-nav__item"
+              ><router-link :class="{
+                'active': path == list.path
+              }" :to="list.path">{{list.title}}</router-link> </li>
           </ul>
         </div>
       </div>
@@ -24,6 +27,19 @@ export default {
     list: {
       type: Array,
       require: true
+    }
+  },
+  data() {
+    return {
+      path: ''
+    }
+  },
+  watch: {
+    $route: {
+      immediate: true,
+      handler() {
+        this.path = this.$route.path
+      }
     }
   }
 }
@@ -72,7 +88,7 @@ export default {
   &__item a{
     font-size: 14px;
     color: rgb(68, 68, 68);
-    &:hover {
+    &.active , &:hover {
       color: rgb(64, 158, 255);
     }
   }
